@@ -14,6 +14,21 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   console.log(data)
   return `# ${data.title}
+  ## Description Of The Repository
+  ${data.description}
+  ## Languages That Were Used During Creation
+  ${data.languages}
+  ## Installation Instructions
+  ${data.installation}
+  ## Usage Information
+  ${data.usage}
+  ## Contributions
+  ${data.contribution}
+  ## Testing Instructions
+  ${data.test}
+  ![${data.alt}](assets/images/screenshot.png)
+  ### ${data.name}   Github: ${data.github}   Contact Info: ${data.email}
+
 
 `;
 }
