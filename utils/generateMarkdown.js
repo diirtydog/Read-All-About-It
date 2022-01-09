@@ -22,11 +22,12 @@ function generateMarkdown(data) {
   ${data.installation}
   ## Usage Information
   ${data.usage}
+  <img src="${data.relative}" alt="${data.alt}">
   ## Contributions
   ${data.contribution}
   ## Testing Instructions
   ${data.test}
-  ![${data.alt}](assets/images/screenshot.png)
+  
   ### ${data.name}   Github: ${data.github}   Contact Info: ${data.email}
 
 

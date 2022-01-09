@@ -112,6 +112,11 @@ const questions = () => {
         },
         {
             type: 'input',
+            name: 'relative',
+            message: 'Please enter the relative pathway for the image you would like to display!'
+        },
+        {
+            type: 'input',
             name: 'contribution',
             message: 'Would you like to state any specific contribution guidelines?'
         },
