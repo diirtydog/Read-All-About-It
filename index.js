@@ -3,24 +3,6 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const writeFile = require('./src/generateReadMe');
 
-
-const mockData = {
-    name: 'Andrew',
-    github: 'diirtydog',
-    email: 'andrew.derek.wales@gmail.com',
-    title: 'ginNjuice',
-    description: 'We be sippin on gin and juice, laidback, money on my mind and my mind on money!',
-    languages: [ 'HTML', 'CSS', 'Javascript' ],
-    installation: "Just don't be sober when you grade my shit!",
-    usage: "I prefer to use a higher end gin unless I'm out trolling my hood for a little shorty.",
-    contribution: 'Snoop Dogg was the real genious behind all this craziness.',
-    test: "If you ain't drinkin you ain't thinkin homie!"
-};
-
-//generateMarkdown(mockData)
-//writeFile(generateMarkdown)
-
-
 // TODO: Create an array of questions for user input
 const questions = () => {
     return inquirer.prompt([
@@ -64,6 +46,12 @@ const questions = () => {
             }
         },
         {
+            type: 'checkbox',
+            name: 'license',
+            message: 'What kind of license should your project have?',
+            choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'None']
+        },
+        {
             type: 'input',
             name: 'title',
             message: 'What is the title of your repository?',
@@ -75,6 +63,11 @@ const questions = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'url',
+            message: 'Please enter url to the associated website.'
         },
         {
             type: 'input',
@@ -127,14 +120,6 @@ const questions = () => {
         }
     ])
 };
-
-// questions()
-//     .then(generateMarkdown);   
-// TODO: Create a function to write README file
-function writeToFile(fileName, questionData) {
-    // console.log(questionData);
-}
-
 
 // TODO: Create a function to initialize app
 function init() {
